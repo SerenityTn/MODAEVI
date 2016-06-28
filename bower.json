@@ -1,0 +1,24 @@
+{
+  "name": "MODAEVI",
+  "description": "",
+  "main": "serenity",
+  "authors": [
+    "Khaireddine <serenity1994@hotmail.fr>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "angular-cookies": "^1.5.7",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37"
+  }
+}
