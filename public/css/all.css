@@ -515,6 +515,10 @@ table.dataTable td {
     position:absolute;
 }
 
+.inline {
+    display:inline-block;
+}
+
 .robes-stats{
     padding-bottom: 20px;
 }

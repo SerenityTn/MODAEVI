@@ -1,5 +1,5 @@
 <div class="col-md-4 form-group">
-        <input type="text" class="form-control" id="name"  placeholder="Nom et/ou Prénom"/>    
+        <input type="text" class="form-control" id="name"  placeholder="Nom et/ou Prénom"/>
 </div>
 <div class="col-md-3 form-group">
     <div class='input-group' id="begin_picker">
@@ -15,6 +15,11 @@
         </span>
     </div>
 </div>
+
+<div class="col-md-3 form-group">
+    @include('robes.categories.dropdown')
+</div>
+
 @section('scripts')
     @parent
     <script type="text/javascript">

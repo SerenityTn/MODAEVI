@@ -29,7 +29,7 @@ class RobesController extends Controller{
     public function filter_list(){
         $category_id = request()->input('category_id');
         $robes_list = Robe::where('category', $category_id)->orderBy('ref', 'asc')->get()->lists('ref','id')->toArray();
-        return view('robes.category_list', compact('robes_list'));
+        return view('robes.robe_list', compact('robes_list'));
     }
 
     public function store(){

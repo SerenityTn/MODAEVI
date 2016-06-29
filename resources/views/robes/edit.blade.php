@@ -7,11 +7,7 @@
                 {!! Form::text('ref', null, ['class' => 'form-control', 'required' => 'required']) !!}
                 <small class="text-danger">{{ $errors->first('Numéro') }}</small>
             </div>
-            <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
-                {!! Form::label('category', 'Catégorie') !!}
-                {!! Form::select('category', $categories, $robe->category, ['class' => 'form-control', 'required' => 'required']) !!}
-                <small class="text-danger">{{ $errors->first('category') }}</small>
-            </div>
+            @include('robes.categories.dropdown', ['robe' => $robe])
             <div class="form-group{{ $errors->has('color') ? ' has-error' : '' }}">
                 {!! Form::label('color', 'Couleur') !!}
                 {!! Form::select('color', $color_options, $robe->color, ['class' => 'form-control', 'required' => 'required']) !!}

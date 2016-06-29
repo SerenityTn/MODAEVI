@@ -7,7 +7,7 @@
                 {!! Form::select('cliente_id', $clientes_list, $cliente_id, ['class' => 'form-control', 'required' => 'required']) !!}
                 <small class="text-danger">{{ $errors->first('cliente_id') }}</small>
             </div>
-            @include('robes.categories')
+            @include('robes.categories.radio')
             @include('partials.forms.addons')
             <div class="form-group{{ $errors->has('avance') ? ' has-error' : '' }}">
                 {!! Form::label('avance', "Avance payée") !!}

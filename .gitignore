@@ -1,6 +1,7 @@
 /vendor
 /node_modules
 /public/storage
+/bower_components
 /public/imgs/robes
 Homestead.yaml
 Homestead.json

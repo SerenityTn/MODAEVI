@@ -1,12 +1,11 @@
 <div class="col-md-4">
     <h5>Catégorie :</h5>
-    @for($i = 0; $i < count($categories); $i++)
-        <label class="checkbox-inline">
-            <input class="category_filter" type="checkbox" name="{{ $categories[$i] }}" value="{{ $i }}">{{ $categories[$i] }}
-        </label>
-    @endfor
+    @include("robes.categories.checkbox")
 </div>
-
+<div class="col-md-5">
+    <h5>Prix :</h5>
+    @include("robes.price")
+</div>
 @section('scripts')
     @parent
     <script type="text/javascript">

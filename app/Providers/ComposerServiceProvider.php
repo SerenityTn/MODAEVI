@@ -16,17 +16,17 @@ class ComposerServiceProvider extends ServiceProvider{
             $view->with('addons', Addon::all());
         });
 
-        view()->composer(['robes.create', 'robes.edit', 'robes.filters', 'robes.list', 'locations.filters', 'locations.create'], function($view){
+        view()->composer(['robes.create', 'robes.edit', 'robes.filters', 'robes.list', 'locations.filters'], function($view){
             $color_options = ['Blanche', 'Noire', 'Rose','Semon','Aubergine', 'Dorée', 'Rouge Bordeau', 'Jaune', 'Ecru', 'Rouge', 'Verte', 'Verte doux', 'Bleue', 'Bleue marine'];
             $view->with('color_options', $color_options);
         });
 
-        view()->composer(['robes.categories', 'robes.index', 'robes.create', 'robes.edit'], function($view){            
+        view()->composer(['robes.categories.radio', 'robes.categories.dropdown', 'robes.categories.checkbox'], function($view){
             $categories = ['0' => 'Mariée', '1' => 'Fiancaille', '2' => 'Keswa', '3' => 'Hadhara'];
             $view->with('categories', $categories);
         });
 
-        view()->composer(['locations.create', 'locations.edit', 'locations.filters'], 'App\Http\ViewComposers\LocationComposer');
+        view()->composer(['locations.create', 'locations.edit', 'locations.filters', 'robes.categories.radio'], 'App\Http\ViewComposers\LocationComposer');
     }
 
     /**
