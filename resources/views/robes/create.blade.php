@@ -6,7 +6,7 @@
     ?>
     <div class="col-sm-4 col-sm-offset-3">
         {!! Form::open(['method' => 'POST', 'route' => 'admin.robe.store', 'class' => 'form-horizontal', 'files' => 'true']) !!}
-            {!! csrf_token(); !!}
+            {!! Form::hidden('csrf-token', "csrf-token") !!}
             <div class="form-group{{ $errors->has('ref') ? ' has-error' : '' }}">
                 {!! Form::label('ref', 'Référence') !!}
                 {!! Form::text('ref', null, ['class' => 'form-control', 'required' => 'required']) !!}
