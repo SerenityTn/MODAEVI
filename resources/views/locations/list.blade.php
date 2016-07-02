@@ -22,10 +22,7 @@
                 <td>{{ $location->assurance }}</td>
                 <td>{{ $location->notes }}</td>
                 <td>
-                    {{ Form::open(['route' => ['admin.location.destroy', $location->id], 'method' => 'delete', 'class' => 'form-inline']) }}
-                    <a href="{{ route('admin.location.edit', $location->id) }}" class="model-control"><span class="glyphicon glyphicon-pencil"></a>
-                    <button type="submit" class="model-control"><span class="glyphicon glyphicon-remove"></span></button>
-                    {{ Form::close() }}
+                    @include('control', ['model' => $location])
                 </td>
             </tr>
         @endforeach

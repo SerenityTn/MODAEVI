@@ -16,8 +16,8 @@
     </div>
 </div>
 
-<div class="col-md-3 form-group">
-    @include('robes.categories.dropdown')
+<div class="col-md-4 form-group">
+    @include('robes.categories.checkbox')
 </div>
 
 @section('scripts')

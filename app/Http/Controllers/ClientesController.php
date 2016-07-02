@@ -9,7 +9,7 @@ use App\Cliente;
 
 class ClientesController extends Controller{
     public function index(){
-        $clientes = Cliente::latest()->paginate(10);
+        $clientes = Cliente::latest()->get();
         return view('clientes.index', compact("clientes"));
     }
 
@@ -24,7 +24,7 @@ class ClientesController extends Controller{
     }
 
     public function filter(){
-        
+
     }
 
     public function show($id){

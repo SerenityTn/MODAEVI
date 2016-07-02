@@ -9,6 +9,7 @@
 @section('scripts')
     @parent
     <script type="text/javascript">
+    $(document).ready(function(){
         function getCategories(){
             var categories = [];
             $('input:checked').each(function(){
@@ -26,5 +27,6 @@
     			$('#list').html(html);
     		});
     	});
+    });
     </script>
 @stop

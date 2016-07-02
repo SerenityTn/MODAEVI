@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<table class="table table-hover" id="clientesTable">
     <thead>
       <tr>
         <th>Nom et prénom</th>
@@ -15,20 +15,24 @@
                 <td>{{ $cliente->number1 }}</td>
                 <td>{{ $cliente->number2 }}</td>
                 <td>{{ $cliente->address }}</td>
-                <td class="control-col">
-                    {{ Form::open(['route' => ['admin.cliente.destroy', $cliente->id], 'method' => 'delete', 'class' => 'form-inline']) }}
-                    <a href="{{ route('admin.cliente.edit', $cliente->id) }}" class="model-control"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <button type="submit" class="model-control"><span class="glyphicon glyphicon-remove"></span></button>
+                <td class="control-col">                    
+                    @include('control', ['model' => $cliente])
                     <a href="{{ route('admin.location.cliente.create', $cliente->id) }}" class="btn btn-success">Louer une robe</a>
-                    {{ Form::close() }}
                 </td>
-
             </tr>
         @endforeach
     </tbody>
 </table>
-<div class="row">
-    <div class="col-sm-12">
-        {{ $clientes->links() }}
-    </div>
-</div>
+@section('scripts')
+    @parent
+    <script type="text/javascript">
+        var locationTable;
+        $(document).ready(function(){
+            locationTable = $('#clientesTable').DataTable({
+                "columnDefs": [
+                    { "searchable": false, "targets": $('th').length-1 }
+                ]
+            });
+        });
+    </script>
+@stop
