@@ -4,7 +4,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+
     Route::get('/', [
         'as' => 'admin.index',
         function(){
@@ -43,3 +44,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('location', 'LocationsController');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

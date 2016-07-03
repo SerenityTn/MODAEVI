@@ -26,7 +26,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#exit">Paramètres</a></li>
                         <li class="divider"></li>
-                        <li><a href="#exit">Déconnexion</a></li>
+                        <li><a href="{{ url('/logout') }}">Déconnexion</a></li>
                     </ul>
                 </li>
 			</ul>

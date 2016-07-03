@@ -10,7 +10,7 @@ use DB;
 
 class RobesController extends Controller{
     public function index(){
-        $robes = Robe::where('category', '3')->orderBy('ref')->get();
+        $robes = Robe::all();
         return view('robes.index', compact('robes'));
     }
 

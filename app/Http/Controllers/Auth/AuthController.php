@@ -55,6 +55,10 @@ class AuthController extends Controller
         ]);
     }
 
+    public function showLoginForm(){
+        return view('admin.login');
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
